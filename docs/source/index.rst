@@ -1,22 +1,22 @@
-Welcome to Lumache's documentation!
+Welcome to the SMO exefs modding guide!
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+This page aimes to help teach people how to create mod for the exefs of Super Mario Odyssey. 
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+The guide will walk you through each stage teaching you how to do each part and at the end will assign you project that you can try to make using all of your skills thay you have learnt whilst following this guide!
+
+
+
+
 
 .. note::
 
-   This project is under active development.
+   This project is under 'active' development.
 
 Contents
 --------
 
 .. toctree::
 
-   usage
-   api
+   learncpp
+   
