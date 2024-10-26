@@ -1,9 +1,6 @@
-Template for the Read the Docs tutorial
-=======================================
+SMO exefs modding Guide
+========================
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
+This is the base repo for a read the docs page to help people learn hoe to create exefs mod for smo. 
 
-Read the tutorial here:
-
-https://docs.readthedocs.io/en/stable/tutorial/
+A work in progress at the moment
