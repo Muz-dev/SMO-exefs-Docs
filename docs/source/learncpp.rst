@@ -11,6 +11,8 @@ This guide assumes you already know basic C++. If you don't I recommend you read
 
 Anyways, let's begin!
 
+
+
 Pointers
 ==============================
 
