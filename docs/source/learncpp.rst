@@ -12,7 +12,7 @@ This guide assumes you already know basic C++. If you don't I recommend you read
 Anyways, let's begin!
 
 Pointers
-=====≈====================
+=====≈=============================
 
 The first thing we are going to talk about is Pointers. As mentioned before, I am going to assume that you already know about pointers, but let's test that!
 
