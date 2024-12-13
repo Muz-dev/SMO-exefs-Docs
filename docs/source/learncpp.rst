@@ -34,6 +34,6 @@ Start by creating a project with a structure. Now create an object of that struc
 Now, reference that structure using `<yourstructname> referenceobj{&<youroriginalobj>};`
 
 It should look something like this.
-`Foo fooobj{&Foo}`
+`Foo rfooobj{&foo}`
 
 
