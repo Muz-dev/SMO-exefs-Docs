@@ -33,7 +33,16 @@ Now that you can use structures and pointers let's put them together!
 Start by creating a project with a structure. Now create an object of that structure. 
 Now, reference that structure using `<yourstructname> referenceobj{&<youroriginalobj>};`
 
-It should look something like this.
-`Foo rfooobj{&foo}`
+Now print the contents of the reference object.
+
+
+
+
+
+
+Conclusion 
+====================
+
+Now that you can do this we can start to code our first exefs mod! We'll start basic but by the end you should be able to code some incredible exefs mods. Let's begin.
 
 
