@@ -31,7 +31,7 @@ Putting them together
 
 Now that you can use structures and pointers let's put them together!
 Start by creating a project with a structure. Now create an object of that structure. 
-Now, reference that structure using `<yourstructname> referenceobj{&<youroriginalobj>};`
+Now, reference that structure using `<yourstructname>& referenceobj = <youoriginalobj>`
 
 Now print the contents of the reference object.
 
