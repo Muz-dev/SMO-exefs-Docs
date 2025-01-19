@@ -1,0 +1,7 @@
+site_name: SMO exefs docs
+
+nav:
+  - Home: index.md
+  - Learning cpp: learncpp.md
+  - Setting Up: Setupmod.md
+theme: readthedocs
