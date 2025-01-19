@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Setting Up - SMO exefs docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Setting Up";
+        var mkdocs_page_input_path = "Setupmod.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> SMO exefs docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../learncpp/">Learning cpp</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Setting Up</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">SMO exefs docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Setting Up</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="setting-up-our-first-mod">Setting Up Our First Mod</h1>
+<p>To write our first exefs mod we need a base. A base is a c++ project that has been configured to compile into a binary file to mod the main executable. The base that we are going to use for this is smo-exlaunch-base-clang. For people that are on windows or linux we can use the base repo linked here <a href="https://github.com/lynxdev2/smo-exlaunch-base-clang">smo-exlaunch-base-clang</a>. However if you are on mac then you need to use a old version of the repo modified to work with MacOS linked here <a href="https://github.com/muz-dev/smo-exlaunch-base-clang">smo-exlaunch-base-clang</a>. Make sure to clone the repo recursivly with --recursive after the url!</p>
+<p>As you should be able to see in the repo there are two tools required to use this base. CMake and Ninja. The rest are downloaded for you. You can download cmake and Ninja on windows with winget, port (macports) on MacOS and your distros package manager on linux.</p>
+<p>Now to test that you can compile your code open a terminal in the directory that you cloned smo-exlaunch-base-clang into. Now type "cmake -S . -B build -G Ninja --toolchain=cmake/toolchain.cmake" if you did everything before correctly it should start to download the required tools for the base. Once thats done you can run "ninja -C build" and it will be compiled.</p>
+<h1 id="setting-up-ghidra">Setting up ghidra</h1>
+<p>When we code our mods we need to symbol to hook onto, this will be explained for later on. We can find these symbol's in ghidra, a decompiler.</p>
+<p>First download it from here <a href="https://github.com/NationalSecurityAgency/ghidra/releases">Ghidra</a>. Next download the ghidra switch loader from here <a href="https://github.com/Abuddz/Ghidra-Switch-Loader/releases">Ghidra Switch Loader</a>. Now that you have downloaded ghidra extract it and run it. Once ghidra has launched press file then install extensions then the plus icon in the top corner, Now select the ghidra switch loader zip file and press install.</p>
+<p>Now we need to extract the exefs from the rom for ghidra. The easiest way to do this is to dump your 1.0.0 rom from your switch using nxdumptool. Download nxdump tool from the homebrew app store or github (if you choose github then make sure to copy it to the switch folder!) Now open the homebrew launcher and launch nxdumptool, then select user titles menu -&gt; 01000...10000 -&gt; nsp dump options -&gt; dump base application -&gt; start nsp dump.</p>
+<p>Once thats done connect your switch to your pc and go to the sd card then open the nxdt_rw_proc/nsp then copy the Super Mario Odyssey folder to somewhere on your pc that you will be able to find. </p>
+<p>Now download file joiner from <a href="https://www.igorware.com/file-joiner">file-joiner</a> and extract it and run it, if you on MacOS or linux then use wine. Now select add a folder and select the Super Mario Odyssey folder. Then join. In the Super Mario Odyssey folder there will now be a new file in there. It should be around 5.2 Gb rename that file to "Super Mario Odyssey.nsp". Now go back to your switch sd card on your pc and download lockpick_rcm.bin and copy it to the bootloader/payloads folder on your switch. Now eject your switch sd card and (if your not already) reboot to hekate and select the payloads tab then lockpick_rcm.bin. Once in the menu use the power button to select "Dump from sysnand". Once you've done that use the volume buttons to navigate to reboot to hekate and then connect your sd card to your pc (or do whatever you do to connect your switch to your pc). Go into the switch folder and copy the prod.keys to somehwere on your pc. Now, Launch download and launch ryujinx. At the top of the screen click file then open ryujinx folder. Now copy prod.keys to the system folder found when opening the ryujinx folder. Now exit back into ryujinx and select options -&gt; settings. Now press add and select the folder with the Super Mario Odyssey.nsp file. Then press ok. Now open your file explorer and create a new folder called exefs. Now go back to ryujinx and right click Super Mario Odyssey (If it doesnt show up then press the reload button in the bottom left corner) and press extract data -&gt; ExeFs then select the exefs folder that you created before. Then it will say extracting data and the exefs will have been extracted to a folder, It should only take a moment. Now that's done you can close out of ryujinx, we are ready to start using ghidra and coding the mod</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../learncpp/" class="btn btn-neutral float-left" title="Learning cpp"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../learncpp/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
