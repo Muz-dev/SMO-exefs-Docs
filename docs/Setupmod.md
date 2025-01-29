@@ -12,7 +12,7 @@ When we code our mods we need to symbol to hook onto, this will be explained for
 
 First download it from here [Ghidra](https://github.com/NationalSecurityAgency/ghidra/releases). Next download the ghidra switch loader from here [Ghidra Switch Loader](https://github.com/Abuddz/Ghidra-Switch-Loader/releases). Now that you have downloaded ghidra extract it and run it. Once ghidra has launched press file then install extensions then the plus icon in the top corner, Now select the ghidra switch loader zip file and press install.
 
-Now we need to extract the exefs from the rom for ghidra. The easiest way to do this is to dump your 1.0.0 rom from your switch using nxdumptool. Download nxdump tool from the homebrew app store or github (if you choose github then make sure to copy it to the switch folder!) Now open the homebrew launcher and launch nxdumptool, then select user titles menu -> 01000...10000 -> nca dump options -> look through the options untill you see exefs (You will see the name when you are selected on it) -> start nca dump.
+Now we need to extract the exefs from the rom for ghidra. The easiest way to do this is to dump your 1.0.0 rom from your switch using nxdumptool. Download nxdump tool from the homebrew app store or github (if you choose github then make sure to copy it to the switch folder!) Now open the homebrew launcher and launch nxdumptool, then select user titles menu -> 01000...10000 -> nca / nca fs dump options -> dump base application-> Program #0 -> start nca fs selection dump 
 
 Once thats done connect your switch to your pc and go to the sd card then open the nxdt_rw_proc/nca/01000...10000/ then copy the exefs folder to somewhere on your pc that you will be able to find. 
 
