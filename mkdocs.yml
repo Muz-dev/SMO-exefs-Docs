@@ -4,4 +4,5 @@ nav:
   - Home: index.md
   - Learning cpp: learncpp.md
   - Setting Up: Setupmod.md
+  - First Mod: firstmod.md
 theme: readthedocs

@@ -4,4 +4,26 @@ Now its time to do some coding! Lets write our first mod for Super Mario Odyssey
 
 Now this is what we use ghidra for. Ghidra is used to search through the code so we can find where we want to hook. 
 
-For this mod we are going to make a simple mod that increases the speed of mario after you collect a moon. So we need to look through ghidra to find the hook for when you collect a moon. 
+For this mod we are going to make a simple mod that increases the speed of mario after you collect a moon. So we need to look through ghidra to find the hook for when you collect a moon. TODO
+
+Now that we have our hook we need to write the actual code for the mod! At the bottom of the main.cpp file in our base that we downloaded, you will see 
+```cpp
+extern "C" void userMain() {
+
+}```
+
+In here at the bottom put `GetMoonHook::InstallAtSymbol("<ourhookwefoundbefore>");`
+
+Now above that create a now struct like this 
+```cpp
+struct GetMoonHook : public mallow::hook::Trampoline<GetMoonHook> {
+    static void Callback() {
+        
+    }
+}```
+
+In the Callback function put an if statment with the parameter `al::isFirstStep(-1)` you will need to include this function. You can check in the `OdysseyDecomp` on github to find which file `al::isFirstStep` can be found. 
+
+This makes sure that the code is only ran once during the execution of the hook, otherwise our code will run once every frame! 
+
+In our code we are going to
