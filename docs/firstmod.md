@@ -10,7 +10,8 @@ Now that we have our hook we need to write the actual code for the mod! At the b
 ```cpp
 extern "C" void userMain() {
 
-}```
+}
+```
 
 In here at the bottom put `GetMoonHook::InstallAtSymbol("<ourhookwefoundbefore>");`
 
